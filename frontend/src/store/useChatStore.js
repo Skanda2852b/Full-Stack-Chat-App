@@ -39,7 +39,7 @@ export const useChatStore = create((set, get) => ({
       const res = await axiosInstance.post(`/messages/send/${selectedUser._id}`, messageData);
       set({ messages: [...messages, res.data] }); //...messages-keep all previous messages with new data res.data
     } catch (error) {
-      toast.error(error.response.data.message);
+      toast.error(error.response.data.message,"Error in /message/send");
     }
   },
 
